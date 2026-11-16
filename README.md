@@ -1,0 +1,56 @@
+# Estevão.dev — Portfólio Pessoal
+
+Portfólio pessoal desenvolvido para apresentar minha trajetória na programação, meus projetos e minhas habilidades em desenvolvimento de software.
+
+O projeto combina uma identidade visual moderna e minimalista com elementos inspirados no universo dos jogos, buscando criar uma experiência interativa e responsiva.
+
+## 🌐 Acesse o portfólio
+
+**[Visitar Estevão.dev](https://estevao-exe.github.io/portfolio/)**
+
+## 👨‍💻 Sobre o projeto
+
+Sou estudante de Ciência da Computação e desenvolvedor em formação, interessado em programação, desenvolvimento web e criação de jogos.
+
+Este portfólio foi desenvolvido como uma oportunidade de colocar em prática meus conhecimentos e explorar tecnologias utilizadas no desenvolvimento front-end.
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5 — estruturação do conteúdo.
+- CSS3 — estilização, layout, animações e responsividade.
+- JavaScript — interatividade e funcionalidades dinâmicas.
+
+## ✨ Funcionalidades
+
+- Interface responsiva para diferentes tamanhos de tela.
+- Alternância de idioma entre português e inglês.
+- Animações de entrada durante a navegação.
+- Cursor personalizado com efeito visual.
+- Elementos visuais inspirados em jogos e pixel art.
+- Navegação entre as seções do portfólio.
+
+## 📁 Estrutura do projeto
+
+```text
+portfolio/
+├── assets/
+│   ├── icons/
+│   ├── img/
+│   └── sprites/
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── index.html
+└── README.md
+```
+
+## 🎯 Objetivo
+
+Este projeto representa parte da minha jornada de aprendizado e desenvolvimento na programação. Pretendo continuar aprimorando suas funcionalidades, seu design e a experiência de navegação.
+
+---
+
+Desenvolvido por **Estevão F. Garcia** e **ChatGpt**.
+
+[GitHub](https://github.com/Estevao-exe) · [Portfólio](https://estevao-exe.github.io/portfolio/)
