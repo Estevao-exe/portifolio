@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portfólio de Estevão F. Garcia, estudante de Ciência da Computação e desenvolvedor em formação."
+    >
+
+    <title>Estevão F. Garcia | Portfólio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+    
+    <header class="header">
+
+        <a href="#inicio" class="logo">
+        <img
+            src="assets/img/estevao_teste.jpeg"
+            class="logo-estevao"
+            alt="Foto de Estevão Figueiredo Garcia"
+        >
+
+        <span>Estevão<span class="logo-accent">.dev</span></span>
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            ☰
+        </button>
+
+        <nav class="navigation" id="navigation" aria-label="Navegação principal">
+
+            <a href="#inicio" data-i18n="navHome">Início</a>
+            <a href="#sobre" data-i18n="navAbout">Sobre</a>
+            <a href="#projetos" data-i18n="navProjects">Projetos</a>
+            <a href="#habilidades" data-i18n="navSkills">Habilidades</a>
+            <a href="#contato" data-i18n="navContact">Contato</a>
+
+        </nav>
+
+        <button
+            class="language-button"
+            id="language-toggle"
+            type="button"
+            aria-label="Alterar idioma para inglês"
+        >
+            PT / EN
+        </button>
+
+    </header>
+
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-greeting" data-i18n="greeting">
+                    Olá, seja bem-vindo!
+                </p>
+
+                <h1>
+                    <span data-i18n="heroNamePrefix">Eu sou</span>
+                    <span>Estevão Figueiredo Garcia</span>
+                </h1>
+
+                <h2 data-i18n="description">
+                    Desenvolvedor em formação e estudante de Ciência da Computação.
+                </h2>
+
+                <p class="hero-description" data-i18n="heroText">
+                    Sou um desenvolvedor em formação, interessado em tecnologia e programação.
+                    Estou sempre em busca de novos desafios e oportunidades para aprimorar
+                    minhas habilidades e contribuir para projetos inovadores, e gosto de
+                    desenvolver jogos também.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projetos"
+                        class="button-primary"
+                        data-i18n="heroProjectsButton"
+                    >
+                        Meus Projetos
+                    </a>
+
+                    <a
+                        href="#sobre"
+                        class="button-secondary"
+                        data-i18n="heroAboutButton"
+                    >
+                        Sobre Mim
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-character">
+                <img
+                src="assets/sprites/Norex_base.png"
+                alt="Nox, mascote do portfólio"
+                class="nox-sprite"
+                >
+            </div>
+
+        </section>
+
+        <!-- SOBRE -->
+        <section
+            id="sobre"
+            class="about"
+            aria-labelledby="sobre-titulo"
+        >
+
+            <h2 id="sobre-titulo" data-i18n="aboutTitle">
+                Sobre mim
+            </h2>
+
+            <p data-i18n="aboutText">
+                Sou estudante de Ciência da Computação e estou
+                desenvolvendo minhas habilidades em programação.
+
+                Gosto de aprender criando projetos, experimentar
+                ideias e entender como as coisas funcionam por trás
+                do código.
+            </p>
+
+        </section>
+
+        <!-- PROJETOS -->
+        <section
+            id="projetos"
+            class="projects"
+            aria-labelledby="projetos-titulo"
+        >
+
+            <h2 id="projetos-titulo" data-i18n="projectsTitle">
+                Meus Projetos
+            </h2>
+
+            <p data-i18n="projectsIntro">
+                Projetos pessoais e experimentais que fazem parte
+                da minha jornada de aprendizado em programação.
+            </p>
+
+            <div class="project-container">
+
+                <article class="project-card">
+
+                    <h3 data-i18n="gameTitle">Meu Jogo</h3>
+
+                    <p data-i18n="gameDescription">
+                        Projeto de desenvolvimento de um jogo 2D
+                        utilizando Godot e GDScript.
+                    </p>
+
+                    <a
+                        href="https://github.com/Estevao-exe/meu-jogo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="githubProjectLink"
+                    >
+                        Ver no GitHub ↗
+                    </a>
+
+                </article>
+
+                <article class="project-card">
+
+                    <h3>Algorithm Lab</h3>
+
+                    <p data-i18n="algorithmDescription">
+                        Projeto experimental para estudar algoritmos,
+                        lógica de programação e C#.
+                    </p>
+
+                    <span
+                        class="project-status"
+                        data-i18n="projectStatus"
+                    >
+                        Em desenvolvimento
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- HABILIDADES -->
+        <section
+            id="habilidades"
+            class="skills"
+            aria-labelledby="habilidades-titulo"
+        >
+
+            <h2 id="habilidades-titulo" data-i18n="skillsTitle">
+                Habilidades e tecnologias
+            </h2>
+
+            <p data-i18n="skillsIntro">
+                Ferramentas e linguagens que estou estudando
+                e utilizando nos meus projetos.
+            </p>
+
+            <div class="skills-container">
+
+                <span>Python</span>
+                <span>C#</span>
+                <span>GDScript</span>
+                <span>Godot</span>
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+        <section
+            id="contato"
+            class="contact"
+            aria-labelledby="contato-titulo"
+        >
+
+            <h2 id="contato-titulo" data-i18n="contactTitle">
+                Vamos conversar?
+            </h2>
+
+            <p data-i18n="contactText">
+                Você pode conhecer meus projetos e acompanhar
+                minha evolução pelo GitHub.
+            </p>
+
+            <a
+                href="https://github.com/Estevao-exe"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="githubProfileLink"
+            >
+                Meu GitHub ↗
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p data-i18n="footerText">
+            © 2026 Estevão Figueiredo Garcia. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
