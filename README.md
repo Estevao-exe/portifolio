@@ -16,9 +16,17 @@ Este portfólio foi desenvolvido como uma oportunidade de colocar em prática me
 
 ## 🛠️ Tecnologias utilizadas
 
-- HTML5 — estruturação do conteúdo.
-- CSS3 — estilização, layout, animações e responsividade.
-- JavaScript — interatividade e funcionalidades dinâmicas.
+<div align="center">
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+</div>
+
+| HTML5 | CSS3 | JavaScript |
+|---|---|---|
+| estruturação do conteúdo| estilização, layout, animações e responsividade| interatividade e funcionalidades dinâmicas |
 
 ## ✨ Funcionalidades
 
@@ -44,6 +52,7 @@ portfolio/
 ├── index.html
 └── README.md
 ```
+
 
 ## 🎯 Objetivo
 
