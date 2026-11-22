@@ -6,7 +6,7 @@ O projeto combina uma identidade visual moderna e minimalista com elementos insp
 
 ## 🌐 Acesse o portfólio
 
-**[Estevão.dev](https://estevao-exe.github.io/portifolio)**
+**[Estevão.dev](https://estevao-exe.github.io/portifolio/)**
 
 ## 👨‍💻 Sobre o projeto
 
@@ -62,4 +62,4 @@ Este projeto representa parte da minha jornada de aprendizado e desenvolvimento 
 
 Desenvolvido por **Estevão F. Garcia** e **ChatGpt**.
 
-[GitHub](https://github.com/Estevao-exe) · [Portfólio](https://estevao-exe.github.io/portfolio/)
+[GitHub](https://github.com/Estevao-exe) · [Portfólio](https://estevao-exe.github.io/portifolio/)
