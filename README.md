@@ -6,7 +6,7 @@ O projeto combina uma identidade visual moderna e minimalista com elementos insp
 
 ## 🌐 Acesse o portfólio
 
-**[Estevão.dev](https://estevao-exe.github.io/portifolio/)**
+**[Estevão.dev](https://estevao-exe.github.io/portifolio)**
 
 ## 👨‍💻 Sobre o projeto
 
