@@ -481,6 +481,19 @@ a{
     margin-right: auto;
 }
 
+
+/* ORGANIZAÇÃO DOS LINKS DE CONTATO */
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+
 .contact a {
     display: inline-block;
 
@@ -737,9 +750,7 @@ img {
 }
 
 
-/* =========================================
-   MELHORIAS VISUAIS - HERO
-========================================= */
+/*MELHORIAS VISUAIS - HERo */
 
 .hero {
     position: relative;
@@ -820,9 +831,7 @@ img {
     letter-spacing: 2px;
 }
 
-/* =========================================
-   MELHORIAS VISUAIS - PROJECTS
-========================================= */
+/* MELHORIAS VISUAIS - PROJECTs*/
 
 .project-card {
     position: relative;
@@ -881,8 +890,7 @@ img {
 }
 
 /* =========================================
-   MELHORIAS VISUAIS - SKILLS
-========================================= */
+   MELHORIAS VISUAIS - SKILLS */
 
 .skills-container span {
     display: inline-flex;
@@ -1007,4 +1015,83 @@ img {
     .cursor-rastro {
         display: none;
     }
+}
+
+
+/* FOTO DE PERFIL INTERATIVA */
+
+.logo-estevao {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-estevao:hover {
+    transform: scale(1.08);
+}
+
+/* Fundo escuro da imagem ampliada */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    cursor: zoom-out;
+}
+
+/* Imagem ampliada */
+
+.image-lightbox img {
+    width: min(75vw, 500px);
+    height: min(75vw, 500px);
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 35px rgba(167, 139, 250, 0.35);
+
+    transform: scale(0.7);
+    transition: transform 0.35s ease;
+}
+
+/* Estado aberto */
+
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-lightbox.active img {
+    transform: scale(1);
+}
+
+
+/* ÍCONES DA SEÇÃO DE CONTATO */
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-links svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.contact-links a:hover svg {
+    transform: scale(1.12);
+}
+
+.contact-links svg {
+    transition: transform 0.3s ease;
 }

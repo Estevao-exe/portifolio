@@ -3,26 +3,21 @@
 
 // 1. ELEMENTOS DO HTML
 
-// Seleciona o botão de idioma.
 const languageButton = document.querySelector("#language-toggle");
-
-// Seleciona todos os elementos que possuem data-i18n.
 const translatableElements = document.querySelectorAll("[data-i18n]");
 
-// Seleciona as seções que receberão animações.
 const revealElements = document.querySelectorAll(
     ".about, .projects, .project-card, .skills, .contact"
 );
 
-// Elementos do menu mobile.
 const menuToggle = document.querySelector("#menu-toggle");
 const navigation = document.querySelector("#navigation");
 
-revealElements.forEach(function (element) {
-    element.classList.add("reveal");
-});
+const cursor = document.querySelector("#cursor");
+const profileImage = document.querySelector("#profile-image");
 
-// 2. TRADUÇÕES DO PORTFÓLIO
+
+// 2. SISTEMA DE TRADUÇÃO
 
 const translations = {
 
@@ -36,7 +31,7 @@ const translations = {
         greeting: "Olá, seja bem-vindo!",
         heroNamePrefix: "Eu sou",
         description: "Desenvolvedor em formação e estudante de Ciência da Computação.",
-        heroText: "Sou um desenvolvedor em formação, interessado em tecnologia e programação. Estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades e contribuir para projetos inovadores, e gosto de desenvolver jogos também.",
+        heroText: "Sou um desenvolvedor em formação, interessado em tecnologia e programação. Estou sempre em busca de novos desafios e oportunidades para aprimorar minhas habilidades e contribuir para projetos inovadores. Também gosto de desenvolver jogos.",
 
         heroProjectsButton: "Meus Projetos",
         heroAboutButton: "Sobre Mim",
@@ -47,6 +42,8 @@ const translations = {
         aboutTitle: "Sobre mim",
         aboutText: "Sou estudante de Ciência da Computação e estou desenvolvendo minhas habilidades em programação. Gosto de aprender criando projetos, experimentar ideias e entender como as coisas funcionam por trás do código.",
 
+        aboutLearningText: "Busco realmente aprender a programar, compreender algoritmos e estruturas de dados, em vez de apenas copiar e colar código. Quero encontrar oportunidades para crescer e entender cada vez mais o mundo da programação.",
+
         projectsTitle: "Meus Projetos",
         projectsIntro: "Projetos pessoais e experimentais que fazem parte da minha jornada de aprendizado em programação.",
 
@@ -54,7 +51,8 @@ const translations = {
         gameDescription: "Projeto de desenvolvimento de um jogo 2D utilizando Godot e GDScript.",
         githubProjectLink: "Ver no GitHub ↗",
 
-        algorithmDescription: "Projeto experimental para estudar algoritmos, lógica de programação e C#.",
+        otherTitle: "Outros Projetos",
+        otherProjectsDescription: "Vários outros projetos disponíveis no meu GitHub.",
         projectStatus: "Em desenvolvimento",
 
         skillsTitle: "Habilidades e tecnologias",
@@ -62,7 +60,10 @@ const translations = {
 
         contactTitle: "Vamos conversar?",
         contactText: "Você pode conhecer meus projetos e acompanhar minha evolução pelo GitHub.",
+
         githubProfileLink: "Meu GitHub ↗",
+        emailLink: "Meu E-mail",
+        linkedinLink: "Meu LinkedIn ↗",
 
         footerText: "© 2026 Estevão Figueiredo Garcia. Todos os direitos reservados."
     },
@@ -88,6 +89,8 @@ const translations = {
         aboutTitle: "About me",
         aboutText: "I'm a Computer Science student developing my programming skills. I enjoy learning by creating projects, experimenting with ideas, and understanding how things work behind the code.",
 
+        aboutLearningText: "I genuinely want to learn how to program and understand algorithms and data structures instead of just copying and pasting code. I'm looking for opportunities to grow and learn more about the world of programming.",
+
         projectsTitle: "My Projects",
         projectsIntro: "Personal and experimental projects that are part of my programming learning journey.",
 
@@ -95,7 +98,8 @@ const translations = {
         gameDescription: "A 2D game development project using Godot and GDScript.",
         githubProjectLink: "View on GitHub ↗",
 
-        algorithmDescription: "An experimental project to study algorithms, programming logic, and C#.",
+        otherTitle: "Other Projects",
+        otherProjectsDescription: "Several other projects are available on my GitHub.",
         projectStatus: "In development",
 
         skillsTitle: "Skills and technologies",
@@ -103,7 +107,10 @@ const translations = {
 
         contactTitle: "Let's talk?",
         contactText: "You can explore my projects and follow my progress on GitHub.",
+
         githubProfileLink: "My GitHub ↗",
+        emailLink: "My Email",
+        linkedinLink: "My LinkedIn ↗",
 
         footerText: "© 2026 Estevão Figueiredo Garcia. All rights reserved."
     }
@@ -111,148 +118,253 @@ const translations = {
 };
 
 
-// 3. IDIOMA ATUAL
+// 3. CONTROLE DE IDIOMA
 
 let currentLanguage = "pt";
-
-
-// 4. FUNÇÃO PARA ALTERAR O IDIOMA
-
 
 function changeLanguage(language) {
 
     translatableElements.forEach(function (element) {
 
         const key = element.dataset.i18n;
+        const translatedText = translations[language]?.[key];
 
-        element.textContent = translations[language][key];
-
-    });
-
-    currentLanguage = language;
-    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-
-    languageButton.setAttribute(
-    "aria-label",
-    language === "pt"
-        ? "Alterar idioma para inglês"
-        : "Switch language to Portuguese"
-    );
-}
-
-languageButton.addEventListener("click", function () {
-
-    if (currentLanguage === "pt") {
-        changeLanguage("en");
-    } else {
-        changeLanguage("pt");
-    }
-});
-
-changeLanguage(currentLanguage);
-
-// Observa quando os elementos entram na tela.
-const observer = new IntersectionObserver(function (entries) {
-
-    entries.forEach(function (entry) {
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-
-            observer.unobserve(entry.target);
+        if (translatedText !== undefined) {
+            element.textContent = translatedText;
         }
 
     });
 
-}, {
-    threshold: 0.15 //15% dos elementos vão estar visiveis na tela para que a animação seja ativada
-});
+    currentLanguage = language;
 
-// Começa a observar cada elemento selecionado.
-revealElements.forEach(function (element) {
-    observer.observe(element);
-});
+    document.documentElement.lang =
+        language === "pt" ? "pt-BR" : "en";
 
-// Abre e fecha o menu mobile.
-menuToggle.addEventListener("click", function () {
-    navigation.classList.toggle("active");
+    if (languageButton) {
 
-    const menuIsOpen = navigation.classList.contains("active");
+        languageButton.setAttribute(
+            "aria-label",
+            language === "pt"
+                ? "Alterar idioma para inglês"
+                : "Switch language to Portuguese"
+        );
 
-    menuToggle.setAttribute("aria-expanded", menuIsOpen);
-
-    menuToggle.textContent = menuIsOpen ? "✕" : "☰";
-    menuToggle.setAttribute(
-        "aria-label",
-        menuIsOpen ? "Fechar menu" : "Abrir menu"
-    );
-});
-
-// Fecha o menu quando um link é selecionado.
-navigation.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navigation.classList.remove("active");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menu");
-        menuToggle.textContent = "☰";
-    });
-});
-
-document.addEventListener("keydown", function (event){
-    if (event.key ==="Escape") {
-        navigation.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menu");
-        menuToggle.textContent = "☰";
     }
-});
+
+}
+
+if (languageButton) {
+
+    languageButton.addEventListener("click", function () {
+
+        if (currentLanguage === "pt") {
+            changeLanguage("en");
+        } else {
+            changeLanguage("pt");
+        }
+
+    });
+
+}
+
+changeLanguage(currentLanguage);
 
 
-// Cursor personalizado
+// 4. ANIMAÇÕES AO ROLAR A PÁGINA
 
-const cursor = document.querySelector("#cursor");
+if ("IntersectionObserver" in window) {
+
+    revealElements.forEach(function (element) {
+        element.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(function (element) {
+        observer.observe(element);
+    });
+
+}
+
+
+// 5. MENU MOBILE
+
+function closeMobileMenu() {
+
+    if (!menuToggle || !navigation) return;
+
+    navigation.classList.remove("active");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+    menuToggle.textContent = "☰";
+
+}
+
+if (menuToggle && navigation) {
+
+    menuToggle.addEventListener("click", function () {
+
+        navigation.classList.toggle("active");
+
+        const menuIsOpen = navigation.classList.contains("active");
+
+        menuToggle.setAttribute("aria-expanded", menuIsOpen);
+        menuToggle.textContent = menuIsOpen ? "✕" : "☰";
+
+        menuToggle.setAttribute(
+            "aria-label",
+            menuIsOpen ? "Fechar menu" : "Abrir menu"
+        );
+
+    });
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", closeMobileMenu);
+
+    });
+
+}
+
+// 6. CURSOR PERSONALIZADO
 
 let ultimoRastro = 0;
 const intervaloRastro = 35;
 
-document.addEventListener("mousemove", function (event) {
-    // O cursor principal acompanha o mouse imediatamente
-    cursor.style.left = event.clientX + "px";
-    cursor.style.top = event.clientY + "px";
+if (cursor) {
 
-    // Controla a frequência de criação das partículas
-    const agora = Date.now();
+    document.addEventListener("mousemove", function (event) {
 
-    if (agora - ultimoRastro < intervaloRastro) {
-        return;
+        cursor.style.left = event.clientX + "px";
+        cursor.style.top = event.clientY + "px";
+
+        const elementoInterativo = event.target.closest(
+            "a, button, input, textarea, select, [role='button']"
+        );
+
+        cursor.classList.toggle(
+            "cursor-hover",
+            Boolean(elementoInterativo)
+        );
+
+        const agora = Date.now();
+
+        if (agora - ultimoRastro < intervaloRastro) {
+            return;
+        }
+
+        ultimoRastro = agora;
+
+        const particula = document.createElement("div");
+
+        particula.classList.add("cursor-rastro");
+
+        particula.style.left = event.clientX + "px";
+        particula.style.top = event.clientY + "px";
+
+        document.body.appendChild(particula);
+
+        setTimeout(function () {
+            particula.remove();
+        }, 700);
+
+    });
+
+}
+
+
+// 7. AMPLIAR FOTO DE PERFIL
+
+if (profileImage) {
+
+    function openProfileImage(event) {
+
+        // Impede que o link do logo também seja acionado.
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Evita criar várias ampliações ao mesmo tempo.
+        if (document.querySelector(".image-lightbox")) return;
+
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("image-lightbox");
+
+        const enlargedImage = document.createElement("img");
+
+        enlargedImage.src = profileImage.src;
+        enlargedImage.alt = profileImage.alt;
+
+        lightbox.appendChild(enlargedImage);
+        document.body.appendChild(lightbox);
+
+        requestAnimationFrame(function () {
+            lightbox.classList.add("active");
+        });
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("active");
+
+            document.removeEventListener("keydown", closeWithEscape);
+
+            setTimeout(function () {
+                lightbox.remove();
+            }, 350);
+
+        }
+
+        function closeWithEscape(event) {
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+        }
+
+        // Fecha somente quando o fundo for clicado.
+        lightbox.addEventListener("click", function (event) {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+        document.addEventListener("keydown", closeWithEscape);
+
     }
 
-    ultimoRastro = agora;
+    profileImage.addEventListener("click", openProfileImage);
 
-    // Cria uma partícula
-    const particula = document.createElement("div");
+    // Permite abrir usando Enter ou Espaço.
+    profileImage.addEventListener("keydown", function (event) {
 
-    particula.classList.add("cursor-rastro");
+        if (event.key === "Enter" || event.key === " ") {
 
-    particula.style.left = event.clientX + "px";
-    particula.style.top = event.clientY + "px";
+            event.preventDefault();
+            event.stopPropagation();
 
-    document.body.appendChild(particula);
+            openProfileImage(event);
 
-    // Remove a partícula após a animação
-    setTimeout(function () {
-        particula.remove();
-    }, 700);
-});
+        }
 
-    // Verifica se o mouse está sobre algo interativo
-    const elementoInterativo = event.target.closest(
-        "a, button, input, textarea, select, [role='button']"
-    );
+    });
 
-    cursor.classList.toggle(
-        "cursor-hover",
-        Boolean(elementoInterativo)
-    );
-
+}

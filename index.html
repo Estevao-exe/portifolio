@@ -7,10 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Portfólio de Estevão F. Garcia, estudante de Ciência da Computação e desenvolvedor em formação."
-    >
+    <meta name="description"
+        content="Portfólio de Estevão F. Garcia, estudante de Ciência da Computação e desenvolvedor em formação.">
 
     <title>Estevão F. Garcia | Portfólio</title>
 
@@ -22,19 +20,25 @@
 <body>
 
     <div id="cursor"></div>
-    
+
+    <!-- CABEÇALHO -->
     <header class="header">
 
         <a href="#inicio" class="logo">
-        <img
-            src="assets/img/estevao_teste.jpeg"
-            class="logo-estevao"
-            alt="Foto de Estevão Figueiredo Garcia"
-        >
 
-        <span>Estevão<span class="logo-accent">.dev</span></span>
+            <img
+                src="assets/img/estevao_teste.jpeg"
+                class="logo-estevao"
+                id="profile-image"
+                alt="Foto de Estevão Figueiredo Garcia"
+                role="button"
+                tabindex="0"
+                aria-label="Ampliar minha foto"
+            >
+
+            <span>Estevão<span class="logo-accent">.dev</span></span>
+
         </a>
-
 
         <button
             class="menu-toggle"
@@ -47,7 +51,11 @@
             ☰
         </button>
 
-        <nav class="navigation" id="navigation" aria-label="Navegação principal">
+        <nav
+            class="navigation"
+            id="navigation"
+            aria-label="Navegação principal"
+        >
 
             <a href="#inicio" data-i18n="navHome">Início</a>
             <a href="#sobre" data-i18n="navAbout">Sobre</a>
@@ -118,11 +126,13 @@
             </div>
 
             <div class="hero-character">
+
                 <img
-                src="assets/sprites/Norex_base.png"
-                alt="Nox, mascote do portfólio"
-                class="nox-sprite"
+                    src="assets/sprites/Norex_idle.gif"
+                    alt="Nox, mascote do portfólio"
+                    class="nox-sprite"
                 >
+
             </div>
 
         </section>
@@ -147,6 +157,13 @@
                 do código.
             </p>
 
+            <p data-i18n="aboutLearningText">
+                Busco realmente aprender a programar, compreender
+                algoritmos e estruturas de dados, em vez de apenas
+                copiar e colar código. Quero encontrar oportunidades
+                para crescer e entender cada vez mais o mundo da programação.
+            </p>
+
         </section>
 
         <!-- PROJETOS -->
@@ -167,6 +184,7 @@
 
             <div class="project-container">
 
+                <!-- PROJETO 1 -->
                 <article class="project-card">
 
                     <h3 data-i18n="gameTitle">Meu Jogo</h3>
@@ -187,21 +205,25 @@
 
                 </article>
 
+                <!-- PROJETO 2 -->
                 <article class="project-card">
 
-                    <h3>Algorithm Lab</h3>
+                    <h3 data-i18n="otherTitle">
+                        Outros Projetos
+                    </h3>
 
-                    <p data-i18n="algorithmDescription">
-                        Projeto experimental para estudar algoritmos,
-                        lógica de programação e C#.
+                    <p data-i18n="otherProjectsDescription">
+                        Vários outros projetos presentes em meu GitHub.
                     </p>
 
-                    <span
-                        class="project-status"
-                        data-i18n="projectStatus"
+                    <a
+                        href="https://github.com/Estevao-exe?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="githubProjectLink"
                     >
-                        Em desenvolvimento
-                    </span>
+                        Ver Repositórios no GitHub ↗
+                    </a>
 
                 </article>
 
@@ -253,23 +275,86 @@
             </h2>
 
             <p data-i18n="contactText">
-                Você pode conhecer meus projetos e acompanhar
-                minha evolução pelo GitHub.
+                Você pode entrar em contato comigo ou acompanhar meus projetos.
             </p>
 
-            <a
-                href="https://github.com/Estevao-exe"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="githubProfileLink"
-            >
-                Meu GitHub ↗
-            </a>
+            <div class="contact-links">
+
+                <!-- E-MAIL -->
+                <a
+                    href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=estevaoprograma@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <path d="m3 7 9 6 9-6"/>
+                    </svg>
+
+                    <span data-i18n="emailLink">Meu E-mail ↗</span>
+
+                </a>
+
+                <!-- LINKEDIN -->
+                <a
+                    href="https://www.linkedin.com/in/estevão-figueiredo-garcia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.3 10H5.7v8.3h2.6V10Zm-.3-4.2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM18.3 13.5c0-2.5-1.3-3.7-3.1-3.7-1.4 0-2 .8-2.4 1.3V10h-2.6v8.3h2.6v-4.1c0-1.1.2-2.2 1.6-2.2s1.4 1.3 1.4 2.3v4h2.5v-4.8Z"/>
+                    </svg>
+
+                    <span data-i18n="linkedinLink">Meu LinkedIn ↗</span>
+
+                </a>
+
+                <!-- GITHUB -->
+                <a
+                    href="https://github.com/Estevao-exe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.7 1 .7 2v3c0 .3.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"/>
+                    </svg>
+
+                    <span data-i18n="githubProfileLink">Meu GitHub ↗</span>
+
+                </a>
+
+            </div>
 
         </section>
 
     </main>
 
+    <!-- RODAPÉ -->
     <footer class="footer">
 
         <p data-i18n="footerText">
